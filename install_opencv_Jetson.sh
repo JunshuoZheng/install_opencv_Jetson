@@ -1,7 +1,3 @@
-# 测试环境：Jetson Xaviear NX with Jetpack5.1
-# 其他Jetson环境未测试过，不过大概也能用
-
-
 version="4.6.0"
 folder="opencv-install" #用于下载和编译的文件夹
 
@@ -67,7 +63,7 @@ cmake -D WITH_CUDA=ON \
 -D BUILD_PERF_TESTS=OFF \
 -D BUILD_EXAMPLES=OFF \
 -D CMAKE_BUILD_TYPE=RELEASE \
--D CMAKE_INSTALL_PREFIX=/usr/local ..
+-D CMAKE_INSTALL_PREFIX=/usr/local ../opencv-${version}/ 
 make -j$(nproc)
 
 
