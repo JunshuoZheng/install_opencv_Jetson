@@ -62,7 +62,7 @@ cmake -D WITH_CUDA=ON \
 -D CUDA_ARCH_BIN="7.2,8.7" \
 -D CUDA_ARCH_PTX="" \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${version}/modules \
+-D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib-${version}/modules \
 -D WITH_GSTREAMER=ON -D WITH_LIBV4L=ON \
 -D BUILD_opencv_python3=ON \
 -D BUILD_TESTS=OFF \
