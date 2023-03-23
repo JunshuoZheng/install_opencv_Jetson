@@ -1,5 +1,7 @@
 version="4.6.0"
-folder="opencv-install" #用于下载和编译的文件夹
+cuda_arch_bin="7.2"
+folder="opencv-install"
+
 
 for (( ; ; ))
 do
@@ -38,7 +40,6 @@ curl -L https://github.com/opencv/opencv_contrib/archive/${version}.zip -o openc
 unzip opencv-${version}.zip
 unzip opencv_contrib-${version}.zip
 rm opencv-${version}.zip opencv_contrib-${version}.zip
-# cd opencv-${version}/
 
 
 echo "------------------------------------"
@@ -46,14 +47,9 @@ echo "** Build opencv "${version}" (3/4)"
 echo "------------------------------------"
 mkdir opencv-${version}-release
 cd opencv-${version}-release/
-cmake ../opencv-${version}/ 
-# generate a build tree in /opencv-${version}-release for the source tree in ../opencv-${version}
-# Once you've created it, cmake remembers where the source folder is - so you can rerun cmake on the build tree with
-# 指定source tree，在此处生成build tree
-# 生成之后，cmake会记住source文件夹在哪儿，所以可以像正常编译一样，执行下面的命令
 cmake -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
--D CUDA_ARCH_BIN="7.2,8.7" \
+-D CUDA_ARCH_BIN="${cuda_arch_bin}" \
 -D CUDA_ARCH_PTX="" \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
 -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib-${version}/modules \
