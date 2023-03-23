@@ -1,11 +1,9 @@
-
-
 # 测试环境：Jetson Xaviear NX with Jetpack5.1
 # 其他Jetson环境未测试过，不过大概也能用
 
 
 version="4.6.0"
-folder="workspace"# 用于下载和编译的文件夹
+folder="opencv-install" #用于下载和编译的文件夹
 
 for (( ; ; ))
 do
